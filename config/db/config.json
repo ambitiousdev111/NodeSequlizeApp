@@ -1,0 +1,45 @@
+{
+ 
+    "development": {
+ 
+        "username": "bd24bd965adf20",
+ 
+        "password": "65545e1b",
+ 
+        "database": "learningapp_dev",
+ 
+        "host": "in-cdbr-azure-central-b.cloudapp.net",
+ 
+        "dialect": "mysql"
+ 
+    },
+ 
+    "test": {
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "",
+ 
+        "dialect": "mysql"
+ 
+    },
+ 
+    "production": {
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "127.0.0.1",
+ 
+        "dialect": "mysql"
+ 
+    }
+ 
+}

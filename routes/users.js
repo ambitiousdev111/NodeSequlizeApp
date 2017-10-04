@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var services = require('../services');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+module.exports = function(app, model){
 
-module.exports = router;
+  app.get('/user/:id', (req, res, next) => {
+  
+    var cb = function(response){
+      res.send(response);
+    };
+
+    services.users.findMySuperUser(req, res, model, cb);
+
+  });
+};
