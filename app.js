@@ -5,16 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
-var env = require('dotenv').load();
-
-//Models
-var models = require("./db/models");
-
-
-var index = require('./routes/index');
-// var users = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,16 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-require('./routes/users')(app, models.user);
-
-
-//Sync Database
-models.sequelize.sync().then(function(){
-	console.log('Nice! Database looks fine');
-}).catch(function(err){
-	console.log(err,"Something went wrong with the Database Update!");
-});
-
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
