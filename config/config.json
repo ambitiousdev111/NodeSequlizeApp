@@ -41,13 +41,13 @@
  
     "production": {
  
-        "username": "",
+        "username": "bd24bd965adf20",
  
-        "password": null,
+        "password": "65545e1b",
  
-        "database": "",
+        "database": "learningapp_dev",
  
-        "host": "127.0.0.1",
+        "host": "in-cdbr-azure-central-b.cloudapp.net",
  
         "dialect": "mysql"
  
