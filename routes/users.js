@@ -2,15 +2,14 @@ var express = require('express');
 var router = express.Router();
 var services = require('../services');
 
-module.exports = function(app, model){
+router.get('/:id', (req, res, next) => {
 
-  app.get('/user/:id', (req, res, next) => {
-  
-    var cb = function(response){
-      res.send(response);
-    };
+  var cb = function(response){
+    res.send(response);
+  };
 
-    services.users.findMySuperUser(req, res, model, cb);
+  services.users.findMySuperUser(req, cb);
 
-  });
-};
+});
+
+module.exports = router;

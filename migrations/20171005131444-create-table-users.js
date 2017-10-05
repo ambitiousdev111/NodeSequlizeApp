@@ -55,7 +55,13 @@ module.exports = {
     status: {
       type: Sequelize.ENUM('active', 'inactive'),
       defaultValue: 'active'
-    }
+    },
+    createdAt: {
+      type: Sequelize.DATE
+    },
+    updatedAt: {
+      type: Sequelize.DATE
+    },
   }, {
     freezeTableName: true
   });

@@ -1,14 +1,17 @@
+var models = require("../models");
+
 
 module.exports = {
 
-	getById: function (id, model, cb){
+	getById: function (id, modeName, cb){
 		var response = {};
 		// search for known id
-		model.findById(id).then(result => {
+		models[modeName].findById(id).then(result => {
 			response.status = 'success';
 			response.data = result;
 		  	cb(response);
 		}).catch(err => {
+			throw err;
 			response.status = 'error';
 			response.data = err;
 		  	cb(response);

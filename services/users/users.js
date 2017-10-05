@@ -2,7 +2,7 @@
 
 module.exports = {
 
-	findMySuperUser : function (req, res, model, callback) {
+	findMySuperUser : function (req, callback) {
 
 		var id = req.params.id;
 
@@ -16,6 +16,6 @@ module.exports = {
 			}
 		}
 
-		dcl.getById(id, model, cb);
+		dcl.getById(id, 'user', cb);
 	}
 }
